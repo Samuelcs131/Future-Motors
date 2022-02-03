@@ -1,0 +1,28 @@
+#footer{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    
+    .container-down{
+        text-align: center;
+        border-top: 1.5px solid rgba($black, 0.1);
+        padding-top: 30px;
+
+        .btn-link{ 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            
+            a{
+                margin: 0 20px;
+                font-size: 12px;
+            }
+        }
+        
+        span{
+            color: rgba($black, 0.5);
+            font-size: 12px;
+        }
+    }
+
+}
