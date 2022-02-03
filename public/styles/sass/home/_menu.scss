@@ -1,0 +1,64 @@
+#menu{
+   z-index: 1000;
+   padding-top: 20px; 
+   position: fixed;
+   width: 100%;
+   
+   .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+   }
+   
+   // LOGO
+   .logo-menu{
+       width: 50px;
+       height: 45px;
+   }
+
+   // NAVEGATION
+   .group-navegation {
+       padding-left: 150px;
+        ul{
+            display: flex;
+       
+            a{
+                margin: 0 15px;
+                color: $black;
+                font-size: 16px;
+            }
+        }
+   }
+   // ITENS ICON
+   .group-item{
+        display: flex;
+        font-size: 16px;
+                
+        .item-menu-card,.item-menu-account{
+            display: flex;
+            color: $black;
+            svg{
+                margin-right: 10px;
+            }
+        }
+        .item-menu-card{
+            margin-right: 20px; 
+        }
+        .quantity-itens{
+            align-self: flex-start;
+            margin-right: 10px;
+            margin-left: -6px;
+            font-size: 10px;
+            background-color: $blue;
+            color: $white;
+            border-radius: 50%;
+            padding-top: 1px;
+            width: 15px;
+            height: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+        }
+    }
+}

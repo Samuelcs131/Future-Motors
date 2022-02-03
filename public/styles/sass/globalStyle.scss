@@ -1,0 +1,41 @@
+/* sass --watch ./sass/globalStyle.scss:./css/globalStyle.css --style compressed  */
+
+
+// COLORS
+$blue: #4FAAFF;
+$white: #FFFFFF;
+$black-grey: #2C2C2C;
+$black: #000000;
+
+// CONTAINER
+@mixin grid-contaier($width) {
+    max-width: $width;
+    margin: 0 auto;
+}
+
+.container{
+    @include grid-contaier(1140px);
+    padding: 0 50px;
+}
+.title-section{
+    font-size: 50px;
+    font-weight: 100;
+    background-image: linear-gradient(180deg, $black 0%, rgba($black, 0.2) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: $black;
+    margin-bottom: 50px;
+}
+
+// RESET
+@import './_reset.scss';
+
+// HOME
+@import './home/menu';
+@import './home/landing';
+@import './home/about';
+@import './home/imagery';
+@import './home/intro';
+@import './home/cards';
+@import './home/publicity';

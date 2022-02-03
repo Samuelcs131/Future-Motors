@@ -1,0 +1,31 @@
+#about{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 0;
+    text-align: center;
+     
+    p{
+        max-width: 500px;
+        text-align: center;
+        margin-bottom: 70px;
+        font-size: 16px;
+    }
+
+    .group-brands-companies{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
+
+    .view-more{
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        svg{
+            margin-left: 10px;
+        }
+    }
+}

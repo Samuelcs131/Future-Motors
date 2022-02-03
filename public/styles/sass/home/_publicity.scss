@@ -1,0 +1,109 @@
+#publicity{
+    color: $black;
+
+
+    // CONTAINER BANNER
+    .container-background{ 
+        position: relative;
+        width: 100%;
+        height: 500px;
+    }
+
+    // INFO BANNER
+    .container{
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        height: 100%;
+     
+        .group-info-publicity{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            p{
+                max-width: 490px;
+                margin-bottom: 25px;
+                font-size: 14px;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                svg{
+                    margin-left: 10px;
+                }
+            }
+            
+        }
+    }
+    // IMAGE
+    .background-image{
+        transition: 0.5s;
+        overflow: hidden;
+        position: absolute;
+        width: 870px;
+        height: 500px;
+        background: url('/img/main-car/lexus-lf30-gallery-6.png') no-repeat; 
+        background-size: 'cover';
+        background-position-y: -50px;
+        right: 0;
+        top: 0;
+
+        &::before{
+            content: ''; 
+            height: 100%;
+            width: 50%;
+            top: 0;
+            left: -35%;
+            position: absolute;
+            background-color: $white;
+            transform: skewX(160deg);
+        }
+    }
+
+}
+
+@media screen and (max-width: 1400px) {
+    #publicity{
+        
+    
+        // INFO BANNER
+        .container{  
+            .group-info-publicity{
+                
+                width: 100%;
+                .title-section{ 
+                    color: $white;
+                    -webkit-text-fill-color: inherit;
+                }
+                p{ color: $white; }
+                a, svg{
+                    color: $white;
+                } 
+            }
+        }
+        
+        // IMAGE
+        .background-image{
+            position: absolute;
+            transition: 0.5s;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center; 
+            right: 0;
+            background-attachment: fixed; 
+
+            &::before{
+                background-color: rgba($black, 0.30);
+                transform: inherit;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+
+        }
+    }
+}

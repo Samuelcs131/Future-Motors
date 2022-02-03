@@ -1,0 +1,75 @@
+#cards{
+    .title-section-card{
+        font-size: 35px;
+        font-weight: 200;
+        color: $black;
+    }
+    .group-title-and-inventory{
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+
+        h2{
+            margin-right: 50px;
+        }
+        .view-more{
+            display: flex;
+            align-items: center;
+            svg{ margin-left: 10px;}
+        }
+    }
+
+    .container-cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        grid-gap: 50px;
+    }
+    
+    
+}
+// CARD
+#card{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 4px 12px -4px rgba(black, 0.20);
+    border-radius: 30px;
+    margin-bottom: 100px;
+
+    .card-info{
+        padding: 40px;
+        color: $black;
+
+        h4{
+            color: $black;
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        span{
+            font-size: 30px;
+            font-weight: 100;
+        }
+    }
+
+    .btn-group{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+
+        a:nth-child(1){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $blue;
+            color: $white;
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 25px;
+            margin-right: 20px;
+            box-shadow: 0px 4px 12px -4px rgba(black, 0.20);
+        }
+    }
+}
