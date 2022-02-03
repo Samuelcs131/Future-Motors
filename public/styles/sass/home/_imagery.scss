@@ -3,4 +3,11 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    
+}
+
+@media screen and (max-width: 720px) {
+    #imagery{
+        flex-wrap: wrap;
+    }
 }

@@ -103,7 +103,7 @@
             background-size: cover;
             background-position: center; 
             right: 0;
-            /* background-attachment: fixed; */
+            background-attachment: fixed;
 
             &::before{
                 background-color: rgba($black, 0.30);
@@ -113,6 +113,16 @@
                 width: 100%;
             }
 
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #publicity{
+         
+        // IMAGE
+        .background-image{
+            background-attachment: scroll;
         }
     }
 }

@@ -85,3 +85,24 @@
     }
 
 }
+
+@media screen and (max-width: 720px) {
+    #landing{
+        width: 100%;
+        .wrapper-landing-info{
+            span{
+                margin-left: 0px;
+            }
+            h1{
+                text-align: center;
+            }
+            .btn-group{
+                flex-wrap: wrap;
+                justify-content: center;
+                a{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

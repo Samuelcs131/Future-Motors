@@ -28,6 +28,12 @@ $black: #000000;
     margin-bottom: 50px;
 }
 
+@media screen and (max-width: 720px) {
+    .title-section{
+        font-size: 40px
+    }
+}
+
 // RESET
 @import './_reset.scss';
 
