@@ -1,0 +1,119 @@
+#car{
+    display: flex;
+    flex-direction: column;
+    
+    
+    .background-car{
+        margin-top: 10vh;
+        user-select: none;
+    }
+  
+    // CAR INFO
+    .car-info{ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 10vh auto;
+        max-width: 700px;
+
+        h1{
+            font-size: 40px;
+            font-weight: 500;
+            color: $black;
+            margin-bottom: 30px; 
+        }
+
+        ul{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3,minmax(80px,1fr));
+            text-align: center;
+            grid-template-rows:  1fr,1fr,1fr;
+            grid-gap: 40px;
+
+            li{
+                width: 100%; 
+                display: flex;
+                flex-direction: column;
+            
+                div:nth-child(1){
+                    font-weight: 500;
+                    font-size: 23px;
+
+                    span{
+                        font-size: 14px;
+                    }
+                }
+
+                span{
+                    font-size: 14px;
+                }
+            }
+
+        }
+       
+    }
+
+    // VERSION OPTION
+    .version-option{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        p{
+            font-weight: 500;
+            color: rgba($black, 0.6);
+            margin-bottom: 5px;
+        }
+
+        .item-model{
+            cursor: pointer;
+            display: flex;
+            width: 100%;
+            height: 53px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid rgba($black, 0.5);
+            border-radius: 25px;
+            margin-bottom: 15px;
+
+            span{
+                margin: 13px 20px;
+                font-weight: 500;
+            }
+        }
+        .item-model.active{
+            border: 3px solid $blue-dark;
+        }
+    }
+
+    // PAINTING OPTION
+    .painting-option{
+        text-align: center;
+        width: 100%;
+
+        .colors-group{
+            max-width: 300px;
+            display: grid;
+            grid-template-columns: repeat(4,minmax(20px,1fr));
+            grid-gap: 10px;
+            margin: 0 auto;
+
+            .color-item{
+                cursor: pointer;
+                margin: 0 auto;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                position: relative;
+                padding: 5px;
+            }
+            .color-item.active{
+                border: 3px solid white;
+                box-shadow: 0px 0px 9px -4px black;
+                
+            }
+        }
+        
+    }
+}
