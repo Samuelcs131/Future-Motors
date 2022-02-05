@@ -18,8 +18,7 @@ const Cart = () => {
         carro: {
             exterior: [ 
                 {imagem: '/img/cars/produto/model-s-1.png'},
-                {imagem: '/img/cars/produto/model-s-2.png'},
-                {imagem: '/img/cars/produto/model-s-3.jpg'},],
+                {imagem: '/img/cars/produto/model-s-2.png'},],
             interior: {imagem: '/img/cars/produto/model-s-4.jpg'}
         },
         cor: [
@@ -107,13 +106,11 @@ const Cart = () => {
                         <h1>Pintura</h1>
                         <div className="colors-group" style={{ gridTemplateColumns: `repeat(5,minmax(20px,1fr))`}}>
                             {produto.cor.length != 0 ? 
-                            (produto.cor.map( (cor, index) => {
-                                return(
-                                    <>
-                                    <div  className="color-item active">
-                                    <span key={index} color={`${cor.cor}`} style={{backgroundColor: `${cor.cor}`}}></span>
+                            (produto.cor.map( (cor, position) => {
+                                return( 
+                                    <div key={position} className="color-item active">
+                                    <span color={`${cor.cor}`} style={{backgroundColor: `${cor.cor}`}}></span>
                                     </div> 
-                                    </>
                                 )
                             }))
                             :

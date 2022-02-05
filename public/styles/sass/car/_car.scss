@@ -17,8 +17,8 @@
     }
     .slick-slider.slick-initialized{
         overflow-x: hidden;
-        overflow-y: visible;
-        height: 100%;
+        overflow-y: hidden;
+        height: 350px;
     }
 
     // CAR INFO
@@ -28,7 +28,7 @@
         align-items: center;
         width: 100%;
         margin: auto auto;
-        margin-top: 10vh;
+        margin-top: 5vh;
         margin-bottom: 30px;
         max-width: 700px;
 
