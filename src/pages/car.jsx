@@ -3,6 +3,7 @@ import HeadPage from "../components/HeadPage";
 import Menu from "../components/Menu";
 import Footer from '../components/Footer'
 import Slider from 'react-slick' 
+import { useEffect } from "react";
 
 const Cart = () => {
     const settings = {
@@ -40,6 +41,42 @@ const Cart = () => {
         },
         descricao: 'As funcionalidades atualmente ativadas requerem uma supervisão ativa do condutor e não tornam o veículo autónomo. Algumas funções requerem sinais de mudança de direção e apresentam um alcance limitado. A ativação e utilização destas funcionalidades dependem da capacidade de obter uma fiabilidade extremamente superior à de condutores humanos, conforme demonstrado por vários milhares de milhas de experiência, bem como aprovação legal, o que poderá levar algum tempo em determinadas jurisdições. À medida que estas funcionalidades de condução autónoma evoluem, o seu automóvel será continuamente atualizado através de atualizações de software automáticas.'
     }
+
+    useEffect(()=> {
+
+        // OPTION VERSION CAR
+        const listVersionCar = document.querySelectorAll('.item-model')
+        // VALUE DEFAULT
+        listVersionCar[0].className = 'item-model active'
+        for(let i = 0; i < listVersionCar.length; i++){
+            listVersionCar[i].addEventListener('click', ()=> {
+                let j = 0;
+                while(j < listVersionCar.length){
+                    listVersionCar[j++].className = 'item-model'
+                }
+                listVersionCar[i].className = 'item-model active'
+            })
+        }
+        
+        // OPTION COLOR CAR
+        const listColorCar = document.querySelectorAll('.color-item')
+        const listNameColor = document.querySelector('.name-color-option')
+        // VALUE DEFAULT
+        listColorCar[0].className = 'color-item active' 
+        for(let i = 0; i < listColorCar.length; i++){
+            listColorCar[i].addEventListener('click', ()=> {
+                let j = 0;
+                while(j < listColorCar.length){
+                    listColorCar[j++].className = 'color-item'
+                }
+                listColorCar[i].className = 'color-item active'
+                listNameColor.innerHTML = produto.cor[i].nome
+            })
+        } 
+       
+    })
+
+
 
     return ( 
         <>
@@ -82,10 +119,6 @@ const Cart = () => {
                     {/* VERSION MODEL */}
                     <div className="version-option">
                         <p>Versão</p>
-                        <div className="item-model active">
-                            <span>Model 3 entrada</span>
-                            <span>$51.900</span>
-                        </div> 
                         {produto.versoes.length != 0 ? (
                         produto.versoes.map( (ver,index) => {
                             return(
@@ -108,7 +141,7 @@ const Cart = () => {
                             {produto.cor.length != 0 ? 
                             (produto.cor.map( (cor, position) => {
                                 return( 
-                                    <div key={position} className="color-item active">
+                                    <div key={position} className="color-item">
                                     <span color={`${cor.cor}`} style={{backgroundColor: `${cor.cor}`}}></span>
                                     </div> 
                                 )
@@ -117,11 +150,10 @@ const Cart = () => {
                             (<p>Nenhuma cor disponivel</p>)}
                            
                         </div>
-                        <p>PRETO OURO NEGRO</p>
+                        <p className="name-color-option">{produto.cor[0].nome}</p>
                     </div>
  
                 </div>
-
                 {/* INTERIOR CAR */}
                 <div className="interior-background">
                         <h1>Interior</h1>
@@ -131,7 +163,6 @@ const Cart = () => {
                         backgroundAttachment: 'fixed', 
                         backgroundSize: 'cover',}}></div> 
                 </div>
-
                 {/* DESCRIPTION CAR */}
                 <div className="description-container container">
                     <h1>Descrição</h1>
