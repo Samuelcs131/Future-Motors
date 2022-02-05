@@ -9,6 +9,7 @@
     .background-car{
         margin-top: 10vh;
         user-select: none;
+        overflow: hidden;
     }
   
     // CAR INFO
@@ -132,11 +133,6 @@
             }
         }
         
-    }
-
-
-    .slick-arrow.slick-next{
-        display: none;
     }
 }
 
