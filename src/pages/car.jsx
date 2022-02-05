@@ -110,8 +110,8 @@ const Cart = () => {
                             (produto.cor.map( (cor, index) => {
                                 return(
                                     <>
-                                    <div key={index} className="color-item active">
-                                    <span color={`${cor.cor}`} style={{backgroundColor: `${cor.cor}`}}></span>
+                                    <div  className="color-item active">
+                                    <span key={index} color={`${cor.cor}`} style={{backgroundColor: `${cor.cor}`}}></span>
                                     </div> 
                                     </>
                                 )
