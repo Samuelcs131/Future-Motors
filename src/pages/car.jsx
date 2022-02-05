@@ -143,7 +143,7 @@ const Cart = () => {
                 <button>Adicionar ao carrinho</button>
 
                 </div>
-                <p>O prazo de entrega pode variar consoante a sua configuração e localização.</p>
+                <p className="container">O prazo de entrega pode variar consoante a sua configuração e localização.</p>
             </div>
         <Footer/>
         </>
