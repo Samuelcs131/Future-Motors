@@ -8,15 +8,7 @@ const Menu = () => {
                 <svg className="logo-menu" viewBox="0 0 50 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M15.8228 0H0V45L15.8228 32.3596V0ZM50 0H27.8481L18.3544 12.6405H40.5063L50 0Z" fill="black"/>
                 </svg>
-            </Link>
-
-            <div className="group-navegation">
-                <ul>
-                    <li> <Link href="#cards"><a>Models</a></Link></li>
-                    <li> <Link href="#publicity"><a>Finance</a></Link></li>
-                    <li> <Link href="#about"><a>About</a></Link></li>
-                </ul>
-            </div>
+            </Link> 
 
             <div className="group-item">
                 <Link passHref href='/'><a className="item-menu-card">
