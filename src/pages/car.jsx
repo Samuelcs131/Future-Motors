@@ -40,15 +40,7 @@ const Cart = () => {
             aceleracao: '6,1'
         },
         descricao: 'As funcionalidades atualmente ativadas requerem uma supervisão ativa do condutor e não tornam o veículo autónomo. Algumas funções requerem sinais de mudança de direção e apresentam um alcance limitado. A ativação e utilização destas funcionalidades dependem da capacidade de obter uma fiabilidade extremamente superior à de condutores humanos, conforme demonstrado por vários milhares de milhas de experiência, bem como aprovação legal, o que poderá levar algum tempo em determinadas jurisdições. À medida que estas funcionalidades de condução autónoma evoluem, o seu automóvel será continuamente atualizado através de atualizações de software automáticas.'
-    } 
-
-    const corCarro = [
-        {nome: 'Branco nao sei oq' ,cor: '#dfe7eb'},
-        {nome: '' ,cor: '#aeb3b7'},
-        {nome: '' ,cor: '#1d364c'},
-        {nome: '' ,cor: '#7b0003'},
-        {nome: '' ,cor: '#12150e'},
-    ]
+    }
 
     return ( 
         <>
@@ -96,9 +88,9 @@ const Cart = () => {
                             <span>$51.900</span>
                         </div> 
                         {produto.versoes.length != 0 ? (
-                        produto.versoes.map( ver => {
+                        produto.versoes.map( (ver,index) => {
                             return(
-                                <div className="item-model">
+                                <div key={index} className="item-model">
                                     <span>{ver.nome}</span>
                                     <span>${ver.valor}</span>
                                 </div>
@@ -114,11 +106,11 @@ const Cart = () => {
                     <div className="painting-option">
                         <h1>Pintura</h1>
                         <div className="colors-group" style={{ gridTemplateColumns: `repeat(5,minmax(20px,1fr))`}}>
-                            {corCarro.length != 0 ? 
-                            (corCarro.map( cor => {
+                            {produto.cor.length != 0 ? 
+                            (produto.cor.map( (cor, index) => {
                                 return(
                                     <>
-                                    <div className="color-item active">
+                                    <div key={index} className="color-item active">
                                     <span color={`${cor.cor}`} style={{backgroundColor: `${cor.cor}`}}></span>
                                     </div> 
                                     </>
