@@ -7,7 +7,7 @@ const Cards = ( {carros} ) => {
         <section id="cards" className="container">
             <div className="group-title-and-inventory">
                 <h2 className="title-section-card">Order Online</h2>
-                <Link href="/"><a className="view-more">
+                <Link href="/vehicles"><a className="view-more">
                     Browse inventory
                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.987671 13L6.98767 7L0.987671 1" stroke="black" strokeLinecap="round" strokeLinejoin="round"/>
