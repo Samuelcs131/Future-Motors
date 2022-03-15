@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Card = ({dataCard}) => {
     return ( 
-        <div id="card">
+        <div className="card">
             <Image src={dataCard.image} priority layout="responsive" width={400} height={225}/>
             <div className="card-info">
                 <h4>{dataCard.name}</h4>
