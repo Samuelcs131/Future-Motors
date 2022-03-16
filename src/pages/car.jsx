@@ -1,18 +1,19 @@
-import Image from "next/image";
 import HeadPage from "../components/HeadPage";
 import Menu from "../components/Menu";
 import Footer from '../components/Footer'
 import Slider from 'react-slick' 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const Cart = () => {
-    const settings = {
+// CONFIG CAROUSEL
+const settings = {
         dots: true,
         infinite: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1
     }
+
+const Cart = () => {
 
     const produto = {
         modelo: 'Model 3',
@@ -41,6 +42,10 @@ const Cart = () => {
         },
         descricao: 'As funcionalidades atualmente ativadas requerem uma supervisão ativa do condutor e não tornam o veículo autónomo. Algumas funções requerem sinais de mudança de direção e apresentam um alcance limitado. A ativação e utilização destas funcionalidades dependem da capacidade de obter uma fiabilidade extremamente superior à de condutores humanos, conforme demonstrado por vários milhares de milhas de experiência, bem como aprovação legal, o que poderá levar algum tempo em determinadas jurisdições. À medida que estas funcionalidades de condução autónoma evoluem, o seu automóvel será continuamente atualizado através de atualizações de software automáticas.'
     }
+
+    /* VALORES */
+    const [versionCar, setVersion] = useState(produto.versoes[0])
+    const [colorCar, setColorCar] = useState(produto.cor[0])
 
     useEffect(()=> {
 
@@ -75,10 +80,10 @@ const Cart = () => {
         } 
        
     })
+ 
+    /* console.log(colorCar) */
 
-
-
-    return ( 
+    return (
         <>
             <HeadPage titlePage={`Car - Future Motors`}/>
             <Menu/>
@@ -122,7 +127,13 @@ const Cart = () => {
                         {produto.versoes.length != 0 ? (
                         produto.versoes.map( (ver,index) => {
                             return(
-                                <div key={index} className="item-model">
+                                <div 
+                                key={index}
+                                /* onClick={()=>setVersion(
+                                    {nome: ver.nome, valor: ver.valor}
+                                )} */
+                                className="item-model">
+                                    
                                     <span>{ver.nome}</span>
                                     <span>${ver.valor}</span>
                                 </div>
@@ -141,7 +152,11 @@ const Cart = () => {
                             {produto.cor.length != 0 ? 
                             (produto.cor.map( (cor, position) => {
                                 return( 
-                                    <div key={position} className="color-item">
+                                    <div 
+                                    onClick={()=>setColorCar(
+                                        {nome: cor.nome,cor: cor.cor}
+                                    )} 
+                                    key={position} className="color-item">
                                     <span color={`${cor.cor}`} style={{backgroundColor: `${cor.cor}`}}></span>
                                     </div> 
                                 )
