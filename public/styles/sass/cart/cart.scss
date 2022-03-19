@@ -1,0 +1,81 @@
+#cart{
+    padding-top: 120px;
+
+    .cart-title{
+        margin-bottom: 50px;
+        h2{ font-size: 24px; }
+        p{ font-size: 16px; }
+    }
+
+    .card-car{
+        border: 1px solid rgb(230, 230, 230);
+        border-radius: 20px;
+
+        .head-card-car{
+            width: 100%;
+            border-bottom: 1px solid rgb(230, 230, 230);
+            padding: 5px 20px;
+            span{ font-weight: 600; font-size: 14px;}
+        }
+
+        .container-card-car{
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            .container-image-and-info{
+                display: flex;
+                gap: 20px;
+
+                .info-car-group{
+                    p{ font-size: 16px; color: rgb(93, 93, 93);}
+                    .value-car{
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .btn-group{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 15px;
+                
+                button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    user-select: none;
+                    cursor: pointer;
+                    height: 30px;
+                    border-radius: 25px;
+                    font-size: 16px;
+                    width: 140px;
+                    font-weight: 500;
+                }
+
+                /* BUTTOM FINALIZE */
+                .btn-finalize{ 
+                    background-color: $blue ;
+                    color: $white;
+                    &:hover{
+                        background-color: rgba($blue , 0.9);
+                    }
+                }
+
+                /* BUTTOM REMOVE */
+                .btn-remove{ 
+                    border: 2px solid rgb(93, 93, 93);
+                    color: rgb(93, 93, 93); 
+                    transition: 0.4s;
+                    &:hover{
+                        background-color: rgb(93, 93, 93);
+                        transition: 0.4s;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

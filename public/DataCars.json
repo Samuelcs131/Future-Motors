@@ -1,0 +1,33 @@
+[
+    {
+        "id": "d12e2d12dg54y",
+        "model": "Model 3",
+        "category": "Sedan",
+        "images": {
+            "model": "/img/cars/model-s-3.png",
+            "outside": [ 
+                {"image": "/img/cars/produto/model-s-1.png"},
+                {"image": "/img/cars/produto/model-s-2.png"}
+            ],
+            "interior": {"image": "/img/cars/produto/model-s-4.jpg"}
+        },
+        "color": [
+            {"name": "BRANCO SUMMIT" ,"codeColor": "#dfe7eb"},
+            {"name": "PRATA SWITCHBLADE" ,"codeColor": "#aeb3b7"},
+            {"name": "AZUL SEEKER" ,"codeColor": "#1d364c"},
+            {"name": "VERMELHO CARMIM" ,"codeColor": "#7b0003"},
+            {"name": "PRETO OURO NEGRO" ,"codeColor": "#12150e"}
+        ],
+        "versions": [
+            {"name":"Model 3", "price": 51900 },
+            {"name":"Model 3 Long Range", "price": 58990},
+            {"name":"Model 3 Performance", "price": 64990}
+        ],
+        "performance": {
+            "range": "491",
+            "speed": "225",
+            "acceleration": "6,1"
+        },
+        "description": "As funcionalidades atualmente ativadas requerem uma supervisão ativa do condutor e não tornam o veículo autónomo. Algumas funções requerem sinais de mudança de direção e apresentam um alcance limitado. A ativação e utilização destas funcionalidades dependem da capacidade de obter uma fiabilidade extremamente superior à de condutores humanos, conforme demonstrado por vários milhares de milhas de experiência, bem como aprovação legal, o que poderá levar algum tempo em determinadas jurisdições. À medida que estas funcionalidades de condução autónoma evoluem, o seu automóvel será continuamente atualizado através de atualizações de software automáticas."
+    }
+]
