@@ -1,17 +1,17 @@
 import HeadPage from "../components/HeadPage";
 import Menu from "../components/Menu";
 import Footer from '../components/Footer'
-import Slider from 'react-slick' 
 import { useEffect, useState } from "react";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
-// CONFIG CAROUSEL
-const settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    }
+// CONFIG CAROUSEL 
+const responsive = {
+    superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 1 },
+    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 1 },
+    tablet: { breakpoint: { max: 1024, min: 464 }, items: 1 },
+    mobile: { breakpoint: { max: 464, min: 0 }, items: 1 }
+};
 
 const Cart = () => {
 
@@ -44,15 +44,19 @@ const Cart = () => {
     }
 
     /* VALORES */
-    const [versionCar, setVersion] = useState(produto.versoes[0])
-    const [colorCar, setColorCar] = useState(produto.cor[0])
+    const [versionCar, setVersion] = useState()
+    const [colorCar, setColorCar] = useState()
+    const [finalizePurchase, setFinalizePurchase] = useState(false)
 
     useEffect(()=> {
+
+        if(versionCar !== undefined && colorCar !== undefined)
+        setFinalizePurchase(true)
 
         // OPTION VERSION CAR
         const listVersionCar = document.querySelectorAll('.item-model')
         // VALUE DEFAULT
-        listVersionCar[0].className = 'item-model active'
+        //listVersionCar[0].className = 'item-model active'
         for(let i = 0; i < listVersionCar.length; i++){
             listVersionCar[i].addEventListener('click', ()=> {
                 let j = 0;
@@ -67,7 +71,7 @@ const Cart = () => {
         const listColorCar = document.querySelectorAll('.color-item')
         const listNameColor = document.querySelector('.name-color-option')
         // VALUE DEFAULT
-        listColorCar[0].className = 'color-item active' 
+        //listColorCar[0].className = 'color-item active' 
         for(let i = 0; i < listColorCar.length; i++){
             listColorCar[i].addEventListener('click', ()=> {
                 let j = 0;
@@ -80,8 +84,7 @@ const Cart = () => {
         } 
        
     })
- 
-    /* console.log(colorCar) */
+  
 
     return (
         <>
@@ -90,18 +93,31 @@ const Cart = () => {
             <div id="car">
                 {/* CAROUSEL CAR */}
                 <span className="background-car">
-                    <Slider {...settings}> 
-                    {produto.carro.exterior.length != 0 ? (
-                    produto.carro.exterior.map( (car,index) => {
-                    return( 
-                        <div key={index} className="background-carousel"> 
-                            <div className="img-background"
-                            style={{background: `url('${car.imagem}') no-repeat`,backgroundSize: 'contain', backgroundPosition: 'center'}}></div>
-                        </div>)
-                    })) : 
-                    ( <h1>Nenhuma foto</h1>)
-                    }
-                    </Slider>
+                    
+                    <Carousel  
+                    draggable={true} // arrastavel 
+                    arrows={true} // setas laterais
+                    ssr={true} // means to render carousel on server-side.
+                    infinite={true} // rolagem infinita
+                    autoPlay={true} // rolagem automatica
+                    autoPlaySpeed={7000} // velocidade rolagem
+                    shouldResetAutoplay={false} // rolagem automatica
+                    keyBoardControl={true} 
+                    transitionDuration={500} // duração de rolagem
+                    removeArrowOnDeviceType={["tablet", "mobile"]} // desativa botão
+                    responsive={responsive}>
+                        {produto.carro.exterior.length != 0 ? (
+                        produto.carro.exterior.map( (car,index) => {
+                        return( 
+                            <div key={index} className="background-carousel"> 
+                                <div className="img-background"
+                                style={{background: `url('${car.imagem}') no-repeat`,backgroundSize: 'contain', backgroundPosition: 'center'}}></div>
+                            </div>)
+                        })) : 
+                        ( <h1>Nenhuma foto</h1>)
+                        }
+                    </Carousel>
+
                 </span>
                 {/* CAR INFO */}
                 <div className="car-info container">
@@ -129,11 +145,10 @@ const Cart = () => {
                             return(
                                 <div 
                                 key={index}
-                                /* onClick={()=>setVersion(
-                                    {nome: ver.nome, valor: ver.valor}
-                                )} */
+                                onClick={()=> setVersion({nome: ver.nome, valor: ver.valor})
+                                }
                                 className="item-model">
-                                    
+                                  
                                     <span>{ver.nome}</span>
                                     <span>${ver.valor}</span>
                                 </div>
@@ -183,16 +198,16 @@ const Cart = () => {
                     <h1>Descrição</h1>
                     <p>{produto.descricao}</p>
 
-                <button>Adicionar ao carrinho</button>
-
+                {finalizePurchase === true ? 
+                <button>Adicionar ao carrinho</button> :
+                <button style={{background: '#b8b8b8', cursor: 'not-allowed'}}>Adicionar ao carrinho</button>
+                }
                 </div>
                 <p className="container">O prazo de entrega pode variar consoante a sua configuração e localização.</p>
             </div>
-        <Footer/>
+        <Footer/> 
         </>
      );
 }
  
 export default Cart;
-
- 

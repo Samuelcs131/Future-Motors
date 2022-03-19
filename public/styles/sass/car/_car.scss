@@ -20,13 +20,7 @@
                 height: 100%;
             }
         }
-
-        .slick-slider.slick-initialized{
-            overflow-x: hidden;
-            overflow-y: hidden;
-            height: 350px;
-        }
-    } 
+    }
 
     // CAR INFO
     .car-info{ 
@@ -120,7 +114,7 @@
         text-align: center;
         width: 100%;
 
-        p { margin-top: 20px;}
+        p { margin-top: 20px; text-transform: uppercase;}
 
         .colors-group{
             max-width: 300px;
@@ -209,11 +203,5 @@
             color: $grey-dark;
         }
     }
-}
-
-/* @media screen and (max-width: 720px) {
-    #car{
-    
-    }
-} */
+} 
 
