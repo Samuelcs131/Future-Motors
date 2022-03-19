@@ -16,8 +16,8 @@ const Cart = () => {
                     <span>You have {2} cars in your cart</span>
                 </div>
 
-            {DataCars.length !== 0 ? ( DataCars.map( car =>{return(
-                <div className="card-car">
+            {DataCars.length !== 0 ? ( DataCars.map( (car, index) =>{return(
+                <div key={index} className="card-car">
                         <div className="head-card-car">
                             <span>April 14</span>
                         </div>
