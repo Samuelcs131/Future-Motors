@@ -2,7 +2,7 @@ import NumberFormat from "react-number-format";
 import { useState, useEffect } from "react";
 import HeadPage from "../../components/HeadPage";
 import Menu from "../../components/Menu";
-
+import Footer from "../../components/Footer"
 
 const CarPay = () => {
 
@@ -96,6 +96,7 @@ const CarPay = () => {
                 </div>
             </div>
         </section>
+        <Footer/>
     </>);
 }
  
