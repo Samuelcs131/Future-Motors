@@ -72,9 +72,7 @@
                         border-radius: 5px;
                     }
                 }
-                img{
-                    height: 50px;
-                }
+                img{ height: 50px;}
             }
         }
 
@@ -104,10 +102,7 @@
             .card-info-cvv{
                 padding: 0 20px;
             
-                span{
-                    color: white;
-                    font-size: 15px;
-                }
+                span{ color: white; font-size: 15px;}
                 
                 .cvv-box{
                     height: 50px;
@@ -117,12 +112,10 @@
                     background: white;
                     border-radius: 5px;
                     width: 100%;
+                    font-size: 15px;
                 }
 
-                img{
-                    margin-top: 30px;
-                    height: 30px;
-                }
+                img{ margin-top: 30px; height: 30px; }
             }
 
         }
@@ -194,10 +187,41 @@
 @media screen and (max-width: 540px) {
     #carpay{
         .card-container{
-            width: 300px;
+            width: 280px;
         }
-        .form-card  .container-date-and-cvv .inputBox {
+        .form-card .container-date-and-cvv .inputBox {
             width: 100%;
+        }
+
+
+        .card-number-box{
+            font-size: 16px;
+        }
+
+        .card-container{
+
+            /* FRONT CARD */
+            .front-card{
+                .image-container .chip-card{
+                    width: 50px;
+                    height: 35px;
+                }
+
+                .card-number-box{ font-size: 16px; }
+
+                .container-card-info .card-info{
+                    margin-top: 20px;
+                    font-size: 12px;    
+                }
+            }
+
+            /* BACK CARD */
+            .back-card{
+                .card-info-cvv {
+                    span{ font-size: 12px;}
+                    .cvv-box{ font-size: 12px;}
+                }
+            }
         }
     }
 }
