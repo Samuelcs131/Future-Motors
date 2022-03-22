@@ -17,7 +17,7 @@ const CarPay = () => {
     }
 
     // 
-/*     useEffect(()=>{
+    useEffect(()=>{
 
         document.querySelector('.card-cvv-input').onfocus = () => {
             document.querySelector('.front-card').style.transform = 'perspective(1000px) rotateY(-180deg)';
@@ -28,7 +28,7 @@ const CarPay = () => {
             document.querySelector('.back-card').style.transform = 'perspective(1000px) rotateY(180deg)'; 
         }
 
-    }) */
+    })
 
     return (<>
         <HeadPage titlePage={'Car Payment - Future Motors'}/>
