@@ -99,7 +99,7 @@ const CarPay = () => {
                     <button className="btn-finalize">Finalize</button>
                 </div>
             </div>
- 
+
             {/* INFO CAR */}
             <div className="card-car">
                 <div className="container-card-car">

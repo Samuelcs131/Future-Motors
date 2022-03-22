@@ -238,17 +238,24 @@
     }
 }
 
-@media screen and (max-width: 843px) {
+@media screen and (max-width: 900px) {
     #carpay{ 
         display: flex;
-        /* CARD CREDIT */ 
+        // CARD CREDIT  
         .card-credit-container{
             order: 2; 
         }
-        /* CARD CAR */
+        // CARD CAR
         .card-car{
-             
-            .container-card-car{ width: 380px;}
+             display: initial;
+             width: 100%; 
+             height: 100%;
+             flex: 2;
+            .container-card-car{ 
+                max-width: 420px;
+                margin: 0 auto;
+                flex: 2;
+            }
         }
     }
 }
