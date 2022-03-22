@@ -9,4 +9,13 @@ const CardCarImage = styled.div`
     background-position: center;
 `
 
-export { CardCarImage };
+const CardCarImageRounded = styled.div` 
+    height: 120px; 
+    width: 200px;
+    background: ${props => `url(${props.image})`} no-repeat;
+    background-size: contain;
+    object-fit: cover;
+    background-position: center;
+`
+
+export { CardCarImage, CardCarImageRounded };

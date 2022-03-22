@@ -1,6 +1,61 @@
 #carpay{
     padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    gap: 50px;
     
+
+    /* CARD CREDIT */
+    .card-credit-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+    } 
+
+    /* CAR PRODUCT */
+    .card-car{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        height: 100%;
+        
+        .container-card-car{
+            box-shadow: rgb(145 158 171 / 24%) 0px 0px 0px 0px, rgb(145 158 171 / 24%) 0px 0px 16px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px;
+            border: 1px solid #e6e6e6;
+            max-width: 500px;
+            height: 100%;
+
+            .info-car{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 10px;
+                h4{ font-size: 22px;}
+                p{ color: grey; font-size: 14px;} 
+            }
+
+            .card-price{
+                hr{ 
+                    background-color: rgb(233, 233, 233); 
+                    height: 1px; 
+                    margin: 10px 0;
+                }
+                .separation-info{
+                    display: flex;
+                    justify-content: space-between;
+                    p{ font-size: 18px;}
+                    span{ font-size: 18px; font-weight: 500;}
+                }
+            }
+        }
+
+    }
 
     /* CARD */
     .card-container{
@@ -119,8 +174,7 @@
             }
 
         }
-    }
-
+    } 
 
     /* CARD FORM */
     .form-card{
@@ -184,8 +238,23 @@
     }
 }
 
+@media screen and (max-width: 843px) {
+    #carpay{ 
+        display: flex;
+        /* CARD CREDIT */ 
+        .card-credit-container{
+            order: 2; 
+        }
+        /* CARD CAR */
+        .card-car{
+             
+            .container-card-car{ width: 380px;}
+        }
+    }
+}
 @media screen and (max-width: 540px) {
     #carpay{
+
         .card-container{
             width: 280px;
         }

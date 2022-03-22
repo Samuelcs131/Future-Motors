@@ -3,6 +3,7 @@ import Menu from "../components/Menu";
 import DataCars from "../../public/DataCars.json"
 import { CardCarImage } from "../styles/style";
 import Footer from "../components/Footer"
+import Link from "next/link"
 
 const Cart = () => {
     return ( 
@@ -35,7 +36,9 @@ const Cart = () => {
                                 </div>
                                 <div className="btn-group">
                                     <button className="btn-remove">Remove</button>
-                                    <button className="btn-finalize">Finalize</button>
+                                    <Link href="/purchase/123">
+                                    <a><button className="btn-finalize">Finalize</button></a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

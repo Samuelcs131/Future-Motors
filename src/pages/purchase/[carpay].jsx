@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import HeadPage from "../../components/HeadPage";
 import Menu from "../../components/Menu";
 import Footer from "../../components/Footer"
+import { CardCarImageRounded } from "../../styles/style";
+import Image from "next/image";
 
 const CarPay = () => {
 
@@ -33,7 +35,9 @@ const CarPay = () => {
         <Menu/>
 
         <section id="carpay" className="container">
-            <div style={{display: 'flex', flexDirection: 'column',alignItems: 'center', maxWidth: '500px'}}>
+ 
+            {/* CARD CREDIT */}
+            <div className="card-credit-container">
                 <div className="card-container">
                     {/* FRONT CARD */}
                     <div className="front-card">
@@ -93,6 +97,28 @@ const CarPay = () => {
                     </div> 
 
                     <button className="btn-finalize">Finalize</button>
+                </div>
+            </div>
+ 
+            {/* INFO CAR */}
+            <div className="card-car">
+                <div className="container-card-car">
+                    <div className="info-car">
+                        <CardCarImageRounded image="/img/cars/model-s-3.png"/>
+                        <h4>Model 3</h4>
+                        <p>Model 3 Long Range</p>
+                        <p>Color: BRANCO SUMMIT</p>
+                    </div>
+                    <div className="card-price">
+                        <hr />
+                        <div className="separation-info">
+                            <p>Car</p><span>$50.000</span></div>
+                        <div className="separation-info">
+                            <p>freight</p><span>free</span></div>
+                        <hr />
+                        <div className="separation-info">
+                            <p>Total</p><span>$50.000</span></div>
+                    </div>
                 </div>
             </div>
         </section>

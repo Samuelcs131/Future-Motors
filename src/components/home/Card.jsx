@@ -9,8 +9,8 @@ const Card = ({dataCard}) => {
                 <h4>{dataCard.name}</h4>
                 <span>{dataCard.price}</span>
                 <div className="btn-group">
-                    <Link href="/"><a>Buy</a></Link>
-                    <Link href="/"><a>Customize</a></Link>
+                    <Link href="/cart"><a>Add Cart</a></Link>
+                    <Link href="/car"><a>Customize</a></Link>
                 </div>
             </div>
         </div>
