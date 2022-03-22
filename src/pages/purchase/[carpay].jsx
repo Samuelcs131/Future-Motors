@@ -17,7 +17,7 @@ const CarPay = () => {
     }
 
     // 
-    useEffect(()=>{
+/*     useEffect(()=>{
 
         document.querySelector('.card-cvv-input').onfocus = () => {
             document.querySelector('.front-card').style.transform = 'perspective(1000px) rotateY(-180deg)';
@@ -28,7 +28,7 @@ const CarPay = () => {
             document.querySelector('.back-card').style.transform = 'perspective(1000px) rotateY(180deg)'; 
         }
 
-    })
+    }) */
 
     return (<>
         <HeadPage titlePage={'Car Payment - Future Motors'}/>
@@ -76,27 +76,29 @@ const CarPay = () => {
                 </div>
 
                 <div className="form-card">
-                    <div className="inputBox">
-                        <label htmlFor="card-number">Card number</label>
-                        <NumberFormat id="card-number" name="cardNumber" format="#### #### #### ####" mask=" " className="card-number-input" placeholder="0000 0000 0000 0000" onChange={handleDataFormCard} />
-                    </div>
-                    <div className="inputBox">
-                        <label htmlFor="card-holder">Card holder</label>
-                        <input type="text" id="card-holder" className="card-holder-input" name="cardHolder" placeholder="SAMUEL CLAUDINO SILVA" onChange={handleDataFormCard}/>
-                    </div>
-
-                    <div className="container-date-and-cvv">
-                        <div className="inputBox">
-                            <label htmlFor="expiration-date">Expiration date</label>
-                            <NumberFormat id="expiration-date" format="##/##" mask=" " placeholder="19/22" name="expirationDate" onChange={handleDataFormCard} />
-                        </div>
-                        <div className="inputBox">
-                            <label htmlFor="card-cvv">cvv</label>
-                            <NumberFormat id="card-cvv" className="card-cvv-input" format="###" name="cardCVV" placeholder="123" onChange={handleDataFormCard} />
-                        </div>
-                    </div> 
-
-                    <button className="btn-finalize">Finalize</button>
+                    {/* CARD NUMBER */}
+<div className="inputBox">
+<label htmlFor="card-number">Card number</label>
+<NumberFormat id="card-number" name="cardNumber" format="#### #### #### ####" mask=" " className="card-number-input" placeholder="0000 0000 0000 0000" onChange={handleDataFormCard} />
+</div>
+{/* CARD HOLDER */}
+<div className="inputBox">
+<label htmlFor="card-holder">Card holder</label>
+<input type="text" id="card-holder" className="card-holder-input" name="cardHolder" placeholder="SAMUEL CLAUDINO SILVA" onChange={handleDataFormCard}/>
+</div>
+{/* EXPIRATION DATE & CVV */}
+<div className="container-date-and-cvv">
+<div className="inputBox">
+    <label htmlFor="expiration-date">Expiration date</label>
+    <NumberFormat id="expiration-date" format="##/##" mask=" " placeholder="19/22" name="expirationDate" onChange={handleDataFormCard} />
+</div>
+<div className="inputBox">
+    <label htmlFor="card-cvv">cvv</label>
+    <NumberFormat id="card-cvv" className="card-cvv-input" format="###" name="cardCVV" placeholder="123" onChange={handleDataFormCard} />
+</div>
+</div>
+{/* BUTTON FINALIZE */}
+<button className="btn-finalize">Finalize</button>
                 </div>
             </div>
 
