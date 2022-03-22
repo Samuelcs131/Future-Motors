@@ -1,10 +1,82 @@
 #carpay{
-    padding-top: 100px;
+    padding-top: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly; 
     gap: 50px;
+
+    /* ADDRESS */
+    .card-address{
+        width: 500px;
+        box-shadow: rgb(145 158 171 / 24%) 0px 0px 0px 0px, rgb(145 158 171 / 24%) 0px 0px 16px;
+        padding: 20px;
+        border-radius: 20px;
+        border: 1px solid #e6e6e6;
+        max-width: 420px;
+
+        .btn-continue{
+            background-color: $blue;
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: $white;
+            font-weight: 500;
+            cursor: pointer;
+            user-select: none;
+
+            &:hover{
+                background-color: rgba($blue , 0.8);
+            }
+        }
+        .inputBox-address {
+            margin-bottom: 20px;
     
+            label{ 
+                display: block;
+                font-size: 14px;
+                font-weight: 500;
+                color: rgb(107, 107, 107);
+            }
+            input{
+                margin-top: 5px;
+                border: 1px solid rgb(194, 194, 194);
+                width: 100%;
+                border-radius: 20px;
+                padding: 5px 10px;
+                font-size: 16px;
+                &::placeholder{
+                    color: rgb(202, 202, 202);
+                }
+            }
+        }
+        .inputBox-address-select{
+            margin-top: 5px;
+            border: 1px solid rgb(194, 194, 194);
+            width: 100%;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 16px;
+            position: relative;
+            height: 36px;
+            overflow: hidden;
+            svg{
+                position: absolute;
+                right: 0;
+                margin-right: 10px;
+                pointer-events: none;
+                user-select: none;
+            }
+            select{
+                position: absolute;
+                width: 95%;
+                -webkit-appearance: none;
+                font-size: 16px;
+            }
+        }
+    }
+
 
     /* CAR PRODUCT */
     .card-car{
@@ -47,8 +119,7 @@
             }
         }
 
-    }
-
+    } 
     /* CARD CREDIT */
     .card-credit-container{
         display: flex;
@@ -223,7 +294,7 @@
             width: 100%;
             height: 40px;
             border-radius: 20px;
-            font-size: 18px;
+            font-size: 16px;
             text-transform: uppercase;
             color: $white;
             font-weight: 500;
@@ -240,23 +311,37 @@
 @media screen and (max-width: 900px) {
     #carpay{ 
         display: flex;
- 
-        // CARD CREDIT  
+        
+        .card-car{
+            order: -1; 
+        }
+
+        // CARD CREDIT
         .card-credit-container{
             display: initial;
-            order: 2; 
+            
             width: 100%;
             .form-card{
                 max-width: 420px;
                 flex: 2;
                 margin: 0 auto;
             }
+            .form-card .container-date-and-cvv .inputBox {
+                width: 100%;
+            } 
             .card-container{ 
                 margin: 0 auto;
                 margin-bottom: -70px;
                 width: 100%;
 
                 .front-card{
+                    max-width: 380px;
+                    flex: 2;
+                    margin:  0px auto;
+                    left: 0;
+                    right: 0;
+                }
+                .back-card{
                     max-width: 380px;
                     flex: 2;
                     margin:  0px auto;
@@ -282,40 +367,45 @@
 @media screen and (max-width: 540px) {
     #carpay{
 
-        .card-container{
-            width: 280px;
-        }
-        .form-card .container-date-and-cvv .inputBox {
-            width: 100%;
-        }
+         
 
-
-        .card-number-box{
-            font-size: 16px;
-        }
-
-        .card-container{
-
-            /* FRONT CARD */
-            .front-card{
-                .image-container .chip-card{
-                    width: 50px;
-                    height: 35px;
+        /* CARD CREDIT */
+        .card-credit-container{
+ 
+            .card-container{
+                width: 280px;
+                .front-card{
+                    max-width: 280px;
                 }
+            } 
 
-                .card-number-box{ font-size: 16px; }
-
-                .container-card-info .card-info{
-                    margin-top: 20px;
-                    font-size: 12px;    
-                }
+            .card-number-box{
+                font-size: 16px;
             }
 
-            /* BACK CARD */
-            .back-card{
-                .card-info-cvv {
-                    span{ font-size: 12px;}
-                    .cvv-box{ font-size: 12px;}
+            .card-container{
+
+                /* FRONT CARD */
+                .front-card{
+                    .image-container .chip-card{
+                        width: 50px;
+                        height: 35px;
+                    }
+
+                    .card-number-box{ font-size: 16px; }
+
+                    .container-card-info .card-info{
+                        margin-top: 20px;
+                        font-size: 12px;    
+                    }
+                }
+
+                /* BACK CARD */
+                .back-card{
+                    .card-info-cvv {
+                        span{ font-size: 12px;}
+                        .cvv-box{ font-size: 12px;}
+                    }
                 }
             }
         }
