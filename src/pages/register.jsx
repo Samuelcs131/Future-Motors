@@ -12,7 +12,7 @@ const Register = () => {
 
     const [dataForm, setDataForm] = useState({email: "",firstName: "", lastName: "", password: "", passwordConfirm: ""})
 
-    const [state, dispatch] = useContext(DataContext )
+    const {state, dispatch} = useContext(DataContext )
 
     const handleDataForm = (event) => {
         const {name, value} = event.target
@@ -47,19 +47,19 @@ const Register = () => {
                     <h1>Create Account</h1>
  
                     <label htmlFor="firstName">First Name</label>
-                    <input type="text" name="firstName" id="firstName" onChange={handleDataForm} />
+                    <input type="text" name="firstName" id="firstName" onChange={handleDataForm} value={dataForm.firstName}/>
                     
                     <label htmlFor="lastName">Last Name</label>
-                    <input type="text" name="lastName" id="lastName" onChange={handleDataForm} />
+                    <input type="text" name="lastName" id="lastName" onChange={handleDataForm} value={dataForm.lastName}/>
 
                     <label htmlFor="email">Email Address</label>
-                    <input type="email" name="email" id="email" onChange={handleDataForm} />
+                    <input type="email" name="email" id="email" onChange={handleDataForm} value={dataForm.email} />
 
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" id="password" onChange={handleDataForm} />
+                    <input type="password" name="password" id="password" onChange={handleDataForm}   />
                     
                     <label htmlFor="passwordConfirm">Password Confirm</label>
-                    <input type="password" name="passwordConfirm" id="passwordConfirm" onChange={handleDataForm} />
+                    <input type="password" name="passwordConfirm" id="passwordConfirm" onChange={handleDataForm}  />
 
                     <button onClick={()=>SubmitForm()}>Create Account</button>
 
